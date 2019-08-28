@@ -51,7 +51,7 @@ public class CarControl : Unit
         distance += Time.deltaTime * speed;
         text_distance.text = System.Math.Round(distance/2, 2) + " m";
 
-        //Debug.Log("Speed: " + System.Math.Round(speed, 2));
+        
 
         
 

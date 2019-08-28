@@ -63,13 +63,10 @@
     <Compile Include="Assets\Scripts\BackgroundRepeat.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\CarControl.cs" />
-    <Compile Include="Assets\Scripts\czlowiek1.cs" />
-    <Compile Include="Assets\Scripts\czlowiek2.cs" />
     <Compile Include="Assets\Scripts\Distance.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\RepeatRoad.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
-    <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Sport Car - 3D model\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Sport Car - 3D model\Scripts\LightEffects.cs" />

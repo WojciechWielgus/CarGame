@@ -2,52 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEnemy : MonoBehaviour
+public class SpawnEnemy : Unit
 {
-    /*
-    public GameObject enemy_prefab;
-    GameObject enemy;
-    private GameObject[] enemys = new GameObject[100];
-    bool[] enemys_live = new bool[100];
-
-    [Range(1, 20)]
-    public float enemy_speed = 1.0f;
-
-    float[] lines = new float[] { -3.3f, -1.1f, 1.1f, 3.3f };
-
-    private void Start()
-    {
-        enemys_live[0] = false;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            enemys[0] = Instantiate(enemy_prefab, new Vector3(lines[Random.Range(0, 3)], 0.3f, GetComponent<Transform>().position.z), Quaternion.identity);
-            enemys_live[0] = true;
-        }
-        if (enemys_live[0])
-        {
-            if (enemys[0].transform.position.z < -10)
-            {
-                enemys_live[0] = false;
-                Destroy(enemys[0]);
-            }
-            enemys[0].transform.position += new Vector3(0, 0, -enemy_speed * Time.deltaTime);
-        }
-    }
-    */
+    
     
     public GameObject enemyPrefab;
     float[] lines = new float[] { -3.3f, -1.1f, 1.1f, 3.3f };
+    public int maxEnemyCount = 5;
+    [Range(0,20)]
+    public float enemySpawnDelay = 2.0f;
+    private float enemySpawnTime;
 
+    private void Start()
+    {
+        enemySpawnTime = enemySpawnDelay;
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        enemySpawnTime -= Time.deltaTime;
+
+        if (Random.Range(0, 1000) % 13 == 0 && Unit.EnemyCount < maxEnemyCount && enemySpawnTime <= 0)
         {
             Instantiate(enemyPrefab, new Vector3(lines[Random.Range(0, 3)], 0.3f, GetComponent<Transform>().position.z), Quaternion.identity);
+            Unit.EnemyCount++;
+            enemySpawnTime = enemySpawnDelay;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //
         }
 
        
