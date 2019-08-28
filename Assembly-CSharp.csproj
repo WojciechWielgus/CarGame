@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\RepeatRoad.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
+    <Compile Include="Assets\Scripts\testscript.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Sport Car - 3D model\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Sport Car - 3D model\Scripts\LightEffects.cs" />
