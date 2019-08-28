@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 18419222}
   - component: {fileID: 18419221}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24f9b1cb691e754e8b133d0b6b86a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 0.5
   boost_multipler: 2
   multiply: 1
 --- !u!64 &18419222
@@ -213,12 +213,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18419220}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9, y: 16, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
@@ -414,7 +414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1189581397
 GameObject:
@@ -428,10 +428,9 @@ GameObject:
   - component: {fileID: 1189581400}
   - component: {fileID: 1189581399}
   - component: {fileID: 1189581398}
-  - component: {fileID: 1189581402}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: GameHUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,26 +509,13 @@ RectTransform:
   - {fileID: 1328189541}
   - {fileID: 1466203631}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1189581402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189581397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bde126fa09b85046b9d081d0fd7702b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
 --- !u!1001 &1242721558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,6 +527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 122109490733456411, guid: db287600243793e4d90c052db36b3c46,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerCar
       objectReference: {fileID: 0}
     - target: {fileID: 124456702532929233, guid: db287600243793e4d90c052db36b3c46,
         type: 3}
@@ -596,6 +587,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
+        type: 3}
+      propertyPath: text_speed
+      value: 
+      objectReference: {fileID: 1328189542}
+    - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
+        type: 3}
+      propertyPath: text_distance
+      value: 
+      objectReference: {fileID: 1466203633}
+    - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
+        type: 3}
+      propertyPath: acceleration
+      value: 10.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db287600243793e4d90c052db36b3c46, type: 3}

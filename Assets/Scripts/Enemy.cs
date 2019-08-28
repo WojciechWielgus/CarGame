@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Unit
 {
+
     bool enemy_live = false;
 
-    [Range(1, 20)]
-    public float enemy_speed = 1.0f;
+    
+    float enemy_speed = 7.0f;
 
     private void Start()
     {
         enemy_live = true;
+        
     }
     
     private void Update()
@@ -23,7 +25,7 @@ public class Enemy : MonoBehaviour
                 enemy_live = false;
                 Destroy(gameObject);
             }
-            GetComponent<Transform>().position += new Vector3(0, 0, -enemy_speed * Time.deltaTime);
+            GetComponent<Transform>().position += new Vector3(0, 0, -enemy_speed * Time.deltaTime * (speed/25));
         }
     }
 }

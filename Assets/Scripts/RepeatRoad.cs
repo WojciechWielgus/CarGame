@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RepeatRoad : MonoBehaviour
 {
-    public float speed = 0.2f;
+    public float speed = 0.5f;
     Vector2 offset;
     [Range(0,3)]
     public float boost_multipler = 2;

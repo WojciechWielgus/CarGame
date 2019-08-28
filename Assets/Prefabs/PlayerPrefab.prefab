@@ -1102,7 +1102,7 @@ GameObject:
   - component: {fileID: 5450270075791343145}
   m_Layer: 0
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: PlayerCar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,6 +1184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turnSpeed: 2
   upSpeed: 2
+  acceleration: 10
+  max_speed: 120
+  text_speed: {fileID: 0}
+  text_distance: {fileID: 0}
 --- !u!1 &122123169851913037
 GameObject:
   m_ObjectHideFlags: 0

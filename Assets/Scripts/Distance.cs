@@ -20,7 +20,7 @@ public class Distance : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
         text_distance = canvas.transform.Find("Distance").GetComponent<Text>();
-        text_speed = canvas.transform.Find("Speed").GetComponent<Text>();
+        
         
     }
 
@@ -31,7 +31,7 @@ public class Distance : MonoBehaviour
         text_distance.text = "Distance: " + System.Math.Round(distance/1000, 2) + " km";
 
 
-        text_speed.text = speed * 3.6 + " km/h";
+        //text_speed.text = speed * 3.6 + " km/h";
 
     }
 }

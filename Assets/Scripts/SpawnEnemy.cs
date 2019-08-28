@@ -50,7 +50,7 @@ public class SpawnEnemy : MonoBehaviour
             Instantiate(enemyPrefab, new Vector3(lines[Random.Range(0, 3)], 0.3f, GetComponent<Transform>().position.z), Quaternion.identity);
         }
 
-        Debug.Log("spawenemy");
+       
     }
     
 
