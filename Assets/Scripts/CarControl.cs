@@ -8,13 +8,15 @@ public class CarControl : Unit
 {
     Transform carTransform;
     [Range(0, 10)]
-    public float turnBoost = 2f;
+    public float turnBoost = 30f;
     [Range(0, 10)]
     public float upSpeed = 2f;
     [Range(5, 50)]
     public float acceleration = 10f;
     public float max_speed = 120.0f;
     public float min_speed = 40.0f;
+    
+    
 
     private float turnSpeed;
 
@@ -27,6 +29,7 @@ public class CarControl : Unit
 
     private void Start()
     {
+        GameIsRun = true; //to do
         carTransform = GetComponent<Transform>();
         playercamera = GetComponentInChildren<Camera>();
         speed = min_speed;
@@ -34,37 +37,37 @@ public class CarControl : Unit
 
     private void Update()
     {
-        if (speed < min_speed) speed = min_speed;
-        TurnSpeed = turnBoost * Time.deltaTime * ((speed + 10) / 10);
-        carTransform.position += new Vector3(TurnSpeed * Input.GetAxis("Horizontal"), 0, 0);
-        
-        
-        if (Input.GetAxis("Vertical") > 0)
+        if(Unit.GameIsRun == true)
         {
-            if (playercamera.transform.position.z > -12.0) playercamera.transform.position -= new Vector3(0, 0, Time.deltaTime * upSpeed);
-            speed += Time.deltaTime * acceleration;
+            if (speed < min_speed && GameIsRun) speed = min_speed;
+            //TurnSpeed = turnBoost * Time.deltaTime * ((speed + 10) / 10);
+            TurnSpeed = turnBoost * Time.deltaTime;
+            carTransform.position += new Vector3(TurnSpeed * Input.GetAxis("Horizontal"), 0, 0);
+
+
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                if (playercamera.transform.position.z > -12.0) playercamera.transform.position -= new Vector3(0, 0, Time.deltaTime * upSpeed);
+                speed += Time.deltaTime * acceleration;
+            }
+
+
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                if (playercamera.transform.position.z < -8.5) playercamera.transform.position += new Vector3(0, 0, Time.deltaTime * upSpeed);
+                speed -= Time.deltaTime * acceleration;
+            }
+
+
+
+            if (speed > max_speed) speed = max_speed;
+            text_speed.text = System.Math.Round(speed, 2) + " km/h";
+
+            distance += Time.deltaTime * speed;
+            text_distance.text = System.Math.Round(distance / 2, 2) + " m";
+
         }
-        
-
-        if (Input.GetAxis("Vertical") < 0)
-        {
-            if (playercamera.transform.position.z < -8.5) playercamera.transform.position += new Vector3(0, 0, Time.deltaTime * upSpeed);
-            speed -= Time.deltaTime * acceleration;
-        }
-
-        
-
-        if (speed > max_speed) speed = max_speed;
-        text_speed.text = System.Math.Round(speed, 2) + " km/h";
-
-        distance += Time.deltaTime * speed;
-        text_distance.text = System.Math.Round(distance/2, 2) + " m";
-
-        
-
-        
-
-
+        Debug.Log(Unit.GameIsRun);
 
     }
 

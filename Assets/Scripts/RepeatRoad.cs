@@ -24,19 +24,23 @@ public class RepeatRoad : MonoBehaviour
 
     private void Update()
     {
-
-
-        if (Input.GetAxis("Vertical") > 0)
+        if(Unit.GameIsRun)
         {
-            multiply = boost_multipler;
-        } else multiply = 1;
-        offset = new Vector2(0, Time.time * speed * multiply);
-        GetComponent<Renderer>().material.mainTextureOffset = offset;
+            if (Input.GetAxis("Vertical") > 0)
+            {
+                multiply = boost_multipler;
+            }
+            else multiply = 1;
+            offset = new Vector2(0, Time.time * speed * multiply);
+            GetComponent<Renderer>().material.mainTextureOffset = offset;
 
-        Background.transform.position -= new Vector3(0, 0, Time.deltaTime * backgroundSpeed * multiply);
-        if (Background.transform.position.z < -20 && backgroundCount < 2)
-        {
-            Background.transform.position += new Vector3(0, 0, 20);
+            Background.transform.position -= new Vector3(0, 0, Time.deltaTime * backgroundSpeed * multiply);
+            if (Background.transform.position.z < -20 && backgroundCount < 2)
+            {
+                Background.transform.position += new Vector3(0, 0, 20);
+            }
         }
+
+        
     }
 }

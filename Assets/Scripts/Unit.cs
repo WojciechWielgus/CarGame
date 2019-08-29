@@ -9,9 +9,12 @@ public class Unit : MonoBehaviour
     public static float EnemyCount { get; set; }
     public static float TurnSpeed { get; set; }
 
+    [SerializeField]
+    public static bool GameIsRun = false;
+
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

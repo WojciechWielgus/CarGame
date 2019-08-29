@@ -20,9 +20,7 @@ public class Enemy : Unit
     
     private void Update()
     {
-        
-
-        if (enemy_live)
+        if (enemy_live && Unit.GameIsRun)
         {
             if (GetComponent<Transform>().position.z < -10)
             {
@@ -41,4 +39,17 @@ public class Enemy : Unit
             
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (enemy_live)
+            if (other.CompareTag("PlayerCar"))
+            {
+                GameIsRun = false;
+                Unit.speed = 0;
+            }
+    }
+
+    
+
 }

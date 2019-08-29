@@ -406,7 +406,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5703546520306427619, guid: e90c113f1a29676418cfe1230530692d,
     type: 3}
   maxEnemyCount: 5
-  enemySpawnDelay: 1
+  enemySpawnDelay: 0.3
 --- !u!4 &657342371
 Transform:
   m_ObjectHideFlags: 0
@@ -606,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
         type: 3}
       propertyPath: acceleration
-      value: 10.4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
         type: 3}
@@ -616,7 +616,12 @@ PrefabInstance:
     - target: {fileID: 5450270075791343145, guid: db287600243793e4d90c052db36b3c46,
         type: 3}
       propertyPath: turnBoost
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65257743522463461, guid: db287600243793e4d90c052db36b3c46,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db287600243793e4d90c052db36b3c46, type: 3}
@@ -735,23 +740,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349368938}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1349368944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1349368938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e81d9970a0865d3408cac3a082cf5acb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1429481890
 PrefabInstance:
   m_ObjectHideFlags: 0

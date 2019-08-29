@@ -18,7 +18,7 @@ public class EnemyCollision : Unit
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy") Debug.Log(other.tag);
+        //if (other.tag == "Enemy") Debug.Log(other.tag);
         
     }
 }
