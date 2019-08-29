@@ -37,7 +37,6 @@ public class Enemy : Unit
                 enemySpeed = enemyMaxSpeed;
             }
 
-            Debug.Log(enemySpeed);
             GetComponent<Transform>().position += new Vector3(0, 0, -enemySpeed);
             
         }

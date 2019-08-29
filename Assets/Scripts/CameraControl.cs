@@ -15,6 +15,6 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mainCamera.transform.position += new Vector3(turnCameraSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
+        // mainCamera.transform.position += new Vector3(turnCameraSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
     }
 }

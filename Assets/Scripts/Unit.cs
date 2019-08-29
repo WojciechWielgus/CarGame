@@ -7,6 +7,7 @@ public class Unit : MonoBehaviour
 {
     public static float speed { get; set; }
     public static float EnemyCount { get; set; }
+    public static float TurnSpeed { get; set; }
 
     void Start()
     {

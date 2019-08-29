@@ -8,38 +8,47 @@ public class CarControl : Unit
 {
     Transform carTransform;
     [Range(0, 10)]
-    public float turnSpeed = 2f;
+    public float turnBoost = 2f;
     [Range(0, 10)]
     public float upSpeed = 2f;
     [Range(5, 50)]
     public float acceleration = 10f;
     public float max_speed = 120.0f;
+    public float min_speed = 40.0f;
 
+    private float turnSpeed;
 
     float distance = 0f;
 
     public Text text_speed;
     public Text text_distance;
 
+    private Camera playercamera;
+
     private void Start()
     {
         carTransform = GetComponent<Transform>();
+        playercamera = GetComponentInChildren<Camera>();
+        speed = min_speed;
     }
 
     private void Update()
     {
-         
-        carTransform.position += new Vector3(turnSpeed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
+        if (speed < min_speed) speed = min_speed;
+        TurnSpeed = turnBoost * Time.deltaTime * ((speed + 10) / 10);
+        carTransform.position += new Vector3(TurnSpeed * Input.GetAxis("Horizontal"), 0, 0);
+        
         
         if (Input.GetAxis("Vertical") > 0)
         {
-            if (carTransform.position.z < -4.5) carTransform.position += new Vector3(0, 0, Time.deltaTime * upSpeed);
+            if (playercamera.transform.position.z > -12.0) playercamera.transform.position -= new Vector3(0, 0, Time.deltaTime * upSpeed);
             speed += Time.deltaTime * acceleration;
         }
-        else if (carTransform.position.z > -5.5) carTransform.position -= new Vector3(0, 0, Time.deltaTime * upSpeed);
+        
 
         if (Input.GetAxis("Vertical") < 0)
         {
+            if (playercamera.transform.position.z < -8.5) playercamera.transform.position += new Vector3(0, 0, Time.deltaTime * upSpeed);
             speed -= Time.deltaTime * acceleration;
         }
 

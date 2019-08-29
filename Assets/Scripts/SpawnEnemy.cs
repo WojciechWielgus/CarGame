@@ -10,7 +10,7 @@ public class SpawnEnemy : Unit
     float[] lines = new float[] { -3.3f, -1.1f, 1.1f, 3.3f };
     public int maxEnemyCount = 5;
     [Range(0,20)]
-    public float enemySpawnDelay = 2.0f;
+    public float enemySpawnDelay = 1.0f;
     private float enemySpawnTime;
 
     private void Start()
